@@ -1,0 +1,24 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=1877
+
+This is an implementation of OOP with a decisively Perl flavor utilizing Vim 7.0's dictionary representation of objects.  More extensive documentation will be added at a later date.  I'm also aware of vimscript #1034 but it was pre-7.0 and thus doesn't utilize many of the features involved with Voodu.  For now, you can do the following:
+
+let s:AD = tv#series#comedy#New('Arrested Development')
+let s:TO = tv#series#comedy#New('The Office')
+
+echo s:AD.name()
+echo s:AD.type()
+echo s:TO.name()." is a ".s:TO.type()
+
+let s:SS = tv#series#comedy#New('The Simpsons')
+
+" An example of Class Method accessing Class Data
+echo tv#series#Names()
+
+let s:dailyshow = tv#New('News Parody')
+echo s:dailyshow.type()
+
+--------------------------------------- Future Plans ---------------------------------------
+
+I want to demonstrate the usefulness of this utility plugin by implementing generic tab/window/buffer classes that can hide a lot of the work I see plugin authors performing, e.g. wincommander, WinWalker, SideBar.
+
+Additionally, I believe I can add functionality similar to Perl's Class::Accessor or Ruby's attr_reader:, namely automatic provision of simple accessor methods.
